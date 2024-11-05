@@ -4,7 +4,7 @@ ul {
   justify-content: center; /* Centers items horizontally */
   align-items: center; /* Centers items vertically */
   background-color: rgb(13, 13, 63);
-  padding: 2px; /* Optional: adds padding for spacing around the content */
+  padding: 10px; /* Optional: adds padding for spacing around the content */
   min-height: 10vh; /* Optional: centers vertically if ul takes full viewport height */
 }
 

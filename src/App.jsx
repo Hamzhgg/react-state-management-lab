@@ -9,14 +9,14 @@ const App = () => {
   const [zombieFighters, setZombieFighters] = useState([
     {
       name: 'Survivor',
-      price: 12,
+      price: 15,
       strength: 6,
       agility: 4,
       img: 'https://via.placeholder.com/150/92c952',
     },
     {
       name: 'Scavenger',
-      price: 10,
+      price: 12,
       strength: 5,
       agility: 5,
       img: 'https://via.placeholder.com/150/771796',
@@ -30,7 +30,7 @@ const App = () => {
     },
     {
       name: 'Tracker',
-      price: 14,
+      price: 10,
       strength: 7,
       agility: 6,
       img: 'https://via.placeholder.com/150/d32776',
@@ -85,7 +85,7 @@ const App = () => {
     setMoney(moneyDiff);
     addTotals(fighter.strength, fighter.agility);
     } else {
-      console.log('Not enough money to buy character');
+      console.log('Not enough money to get the character');
     };
   };
   const handleRemoveFighter = (fighter, index) => {
@@ -104,17 +104,17 @@ const App = () => {
   };
   return (
     <>
-      <h1 className="center">Zombie Fighters</h1>
+      <h2 className="center">Zombie Fighters</h2>
       <h4 className="center">Money: ${money}</h4>
-      <h4 className="center">Total Strength: {totalStrength}</h4>
-      <h4 className="center">Total Agility: {totalAgility}</h4>
-      <h1 className="center">{team.length === 0 ? 'Pick some team members!' : ''}</h1>
+      <h5 className="center">Total Strength: {totalStrength}</h5>
+      <h5 className="center">Total Agility: {totalAgility}</h5>
+      <h5 className="center">{team.length === 0 ? 'Pick to the team members!' : ''}</h5>
       <h3 className="center">Team</h3>
       <ul>
         {team.map((fighter, index) => (
           <li key={index}>
             <ZombieFighter fighter={fighter} />
-            <button onClick={() => {handleRemoveFighter(fighter, index)}}>Remove from Team</button>
+            <button onClick={() => {handleRemoveFighter(fighter, index)}}>Remove</button>
           </li>
         ))}
       </ul>
@@ -123,7 +123,7 @@ const App = () => {
         {zombieFighters.map((fighter, index) => (
           <li key={index}>
             <ZombieFighter fighter={fighter} />
-            <button onClick={() => {handleAddFighter(fighter)}}>Add to Team</button>
+            <button onClick={() => {handleAddFighter(fighter)}}>Add</button>
           </li>
         ))}
       </ul>
